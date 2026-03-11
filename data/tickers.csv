@@ -1,0 +1,4 @@
+ticker,name,asset_class
+BTC-USD,Bitcoin,crypto
+^GSPC,S&P 500,index
+GC=F,Gold Futures,commodity
