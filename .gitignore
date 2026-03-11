@@ -21,3 +21,8 @@ build/
 # OS
 .DS_Store
 Thumbs.db
+
+# Editor swap/backup files
+*.swp
+*.swo
+*~
