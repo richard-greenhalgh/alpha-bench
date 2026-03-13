@@ -1,6 +1,8 @@
-# Data files — ignore raw CSVs but keep directory
+# Data files — ignore raw CSVs but keep directories
 data/raw/*
 !data/raw/.gitkeep
+data/results/*
+!data/results/.gitkeep
 
 # Python
 __pycache__/

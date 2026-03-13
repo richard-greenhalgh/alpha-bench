@@ -26,6 +26,9 @@ class DataFetcher:
 
     # for a single ticker, save OHLCV data as CSV
     def save(self, df: pd.DataFrame, ticker: str) -> None:
+        # flatten MultiIndex columns produced by newer yfinance versions (e.g. (Close, BTC-USD) -> Close)
+        if isinstance(df.columns, pd.MultiIndex):
+            df.columns = df.columns.get_level_values(0)
         # clean up raw name for creating the CSV
         safe_name = ticker.replace("^", "").replace("=", "_")
         path = os.path.join(self.output_dir, f"{safe_name}.csv")
