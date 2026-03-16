@@ -13,3 +13,10 @@ class Signal(ABC):
     @abstractmethod
     def calc(self, df: pd.DataFrame) -> pd.DataFrame:
         pass
+
+    @classmethod
+    @abstractmethod
+    def param_schema(cls) -> list[dict]:
+        # Returns parameter definitions so the UI can render widgets dynamically.
+        # Each dict: {"name": "n_fast", "label": "Fast period", "type": "int", "default": 20, "min": 2, "max": 500}
+        pass

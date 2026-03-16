@@ -9,6 +9,13 @@ class MACrossover(Signal):
         self.n_fast = n_fast
         self.n_slow = n_slow
 
+    @classmethod
+    def param_schema(cls) -> list[dict]:
+        return [
+            {"name": "n_fast", "label": "Fast period", "type": "int", "default": 20, "min": 2,  "max": 200},
+            {"name": "n_slow", "label": "Slow period", "type": "int", "default": 50, "min": 2,  "max": 500},
+        ]
+
     def calc(self, df: pd.DataFrame) -> pd.DataFrame:
         df = df.copy()
 
